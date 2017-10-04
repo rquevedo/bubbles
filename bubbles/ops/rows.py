@@ -18,6 +18,7 @@ from datetime import datetime
 from time import strptime
 from base64 import b64decode
 import json
+import re
 
 # FIXME: add cheaper version for already sorted data
 # FIXME: BasicAuditProbe was removed
@@ -676,7 +677,7 @@ def _(ctx, iterator, field, substitutions):
     """Substitute field using text substitutions"""
     # Compile patterns
     fields = iterator.fields
-    substitutions = [(re.compile(patt), r) for (patt, r) in subsitutions]
+    substitutions = [(re.compile(patt), r) for (patt, r) in substitutions]
     index = fields.index(field)
     for row in iterator:
         row = list(row)
