@@ -173,7 +173,7 @@ class Graph(object):
 
         if connections:
             for connection in connections:
-                self.connect(*connectio)
+                self.connect(*connection)
 
     def _generate_node_name(self):
         """Generates unique name for a node"""
